@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b, #0b1220);
+  color: #e5e7eb;
+}
+
+/* ===== Layout ===== */
+.container {
+  max-width: 1100px;
+  padding: 20px;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background: linear-gradient(90deg, #111827, #1f2937) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+/* ===== Card (ONLY ONCE) ===== */
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  backdrop-filter: blur(10px);
+  color: #e5e7eb;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ===== Headings ===== */
+h1, h2, h3, h4, h5 {
+  color: #f9fafb;
+  font-weight: 600;
+}
+
+/* ===== Inputs ===== */
+.form-control {
+  background: rgba(255, 255, 255, 0.07) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 10px !important;
+}
+
+/* Focus (clean blue, NOT red) */
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.10) !important;
+  color: #ffffff !important;
+  border-color: #60a5fa !important;
+  box-shadow: 0 0 0 0.2rem rgba(96, 165, 250, 0.25) !important;
+}
+
+/* File input */
+input[type="file"] {
+  color: #ffffff !important;
+}
+
+/* ===== Floating Labels (FIXED Notes issue) ===== */
+.form-floating > label {
+  color: rgba(255, 255, 255, 0.65) !important;
+  background: transparent !important;
+}
+
+.form-floating > .form-control,
+.form-floating > .form-control:focus {
+  background: rgba(255, 255, 255, 0.07) !important;
+}
+
+/* FIX: prevents Notes label bug */
+.form-floating > textarea.form-control {
+  height: 120px;
+  padding-top: 1.8rem;
+}
+
+.form-floating > .form-control:focus ~ label {
+  color: #cbd5e1 !important;
+}
+
+/* ===== Buttons (Metallic Red Theme) ===== */
+.btn-primary {
+  background: linear-gradient(145deg, #ff4d4d, #8b0000);
+  border: none;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+}
+
+.btn-success {
+  background: linear-gradient(145deg, #ff3b3b, #7f0000);
+  border: none;
+  color: white;
+}
+
+.btn-danger {
+  background: linear-gradient(145deg, #8b0000, #ff1a1a);
+  border: none;
+  color: white;
+}
+
+.btn-warning {
+  background: linear-gradient(145deg, #ff2e2e, #990000);
+  border: none;
+  color: white;
+}
+
+/* ===== Badges ===== */
+.badge {
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+/* ===== Links ===== */
+a {
+  text-decoration: none;
+}
+
