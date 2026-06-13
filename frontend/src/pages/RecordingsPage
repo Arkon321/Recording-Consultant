@@ -1,0 +1,66 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+import RecordingList from "../components/RecordingList";
+
+function RecordingsPage() {
+  const [recordings, setRecordings] = useState([]);
+  const [search, setSearch] = useState("");
+
+  const fetchRecordings = async () => {
+    const res = await axios.get(
+      "http://localhost:5000/api/recordings"
+    );
+
+    setRecordings(res.data);
+  };
+
+  useEffect(() => {
+    fetchRecordings();
+  }, []);
+
+  const filteredRecordings = recordings.filter(
+    (recording) =>
+      recording.title
+        .toLowerCase()
+        .includes(search.toLowerCase()) ||
+      recording.clientName
+        .toLowerCase()
+        .includes(search.toLowerCase()) ||
+      recording.consultantName
+        .toLowerCase()
+        .includes(search.toLowerCase())
+  );
+
+  return (
+    <div className="container mt-4">
+
+      <div className="row mb-4">
+
+        <div className="col-md-4">
+          <div className="card text-center p-3">
+            <h2>{recordings.length}</h2>
+            <p>Total Recordings</p>
+          </div>
+        </div>
+
+      </div>
+
+      <input
+        className="form-control mb-4"
+        placeholder="Search by title, client or consultant..."
+        value={search}
+        onChange={(e) =>
+          setSearch(e.target.value)
+        }
+      />
+
+      <RecordingList
+        recordings={filteredRecordings}
+        refresh={fetchRecordings}
+      />
+
+    </div>
+  );
+}
+
+export default RecordingsPage;
